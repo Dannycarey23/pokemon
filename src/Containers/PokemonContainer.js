@@ -15,17 +15,17 @@ const PokemonContainer = () => {
 
 
     const fetchPokemon = function(){
-        fetch("https://pokeapi.co/api/v2/pokemon/?limit=9")
+        fetch("https://pokeapi.co/api/v2/pokemon/?limit=150")
         .then(res => res.json())
         .then(data => setPokemon(data.results))    
     }
-
-
   
 
-    // const onPokemonClicked = function(pokemon) {
-    //     setSelectedPokemon(pokemon);
-    // }
+    const onPokemonClicked = function(pokemon) {
+        fetch(pokemon.url)
+        .then (res => res.json())
+        .then(data => setSelectedPokemon(data));
+    }
 
     const onPokemonSelected = function(pokemon){
         fetch(pokemon.url)
@@ -37,10 +37,10 @@ const PokemonContainer = () => {
     return (
     <>
     
-   <h1><u>Simple Pokedex</u></h1>
+   <h1><u>Pokedex</u></h1>
    Choose a pokemon from the dropdown: <PokemonSelector pokemon={pokemon} onPokemonSelected={onPokemonSelected} />
    <p></p>
-   {selectedPokemon ? <PokemonDetails pokemon={selectedPokemon}/> : <PokemonList pokemon={pokemon} /> }
+   {selectedPokemon ? <PokemonDetails pokemon={selectedPokemon}/> : <PokemonList pokemon={pokemon} onPokemonClicked={onPokemonClicked}/> }
    
     </>
 

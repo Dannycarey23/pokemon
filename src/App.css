@@ -2,22 +2,24 @@
   text-align: center;
 }
 
-.PokeBox {
+.pokeBox {
   width: 99%;
-  display: flex;
   margin: auto;
+  text-align: center;
 }
 
 .PokeCard{
   margin: auto;
-  width: 50%;
-  border: 3px solid black;
+  width: 40%;
+  background-color: white;
+  border: 3px solid #f7c925;
   padding: 3px;
   text-align: center;
 }
 
 .PokeCard hr{
   width: 25%;
+  background-color: #f7c925;
 }
 
 .pokeSprite{

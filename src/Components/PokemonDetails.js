@@ -2,21 +2,22 @@ import React from 'react'
 
 const PokemonDetails = ({pokemon}) => {
     
-    console.log(pokemon)
     return (
         <>
         <div className='PokeCard'>
         
         <img src={pokemon.sprites.front_shiny} className='pokeSprite'></img>
         <h3><u>{pokemon.name}</u></h3>
-        <p>Height: {pokemon.height}cm</p>
-        <p>Weight: {pokemon.weight}kg</p>
+        <p>Height: {pokemon.height}ft</p>
+        <p>Weight: {pokemon.weight}lbs</p>
         <hr></hr>
-        <p>Moves: {pokemon.abilities[0].ability.name} and {pokemon.abilities[1].ability.name}</p>
+        <p><strong><u>Moves List</u></strong> </p> 
+        <p> {pokemon.abilities[0].ability.name}</p>
+        <p> {pokemon.abilities[1].ability.name}</p>
         
        </div>
 
-       <a href="/">Back to the homepage</a>
+       <p><a href="/">Back to the homepage</a></p>
        </>
     )}
 
