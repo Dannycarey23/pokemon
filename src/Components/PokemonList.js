@@ -9,7 +9,7 @@ const PokemonList = ({pokemon}) => {
 
 return(
     <>
-    <div>
+    <div className='pokeProfile'>
         <ul>
             {pokemonItem}
         </ul>
